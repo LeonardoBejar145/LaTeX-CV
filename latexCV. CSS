@@ -1,1 +1,139 @@
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage[margin=0.5in]{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
 
+\usepackage{tikz}
+\usepackage{kpfonts} % for \varheartsuit , also changes font
+\usepackage{color}
+\newcommand*\Hs{\ensuremath{\color{red}\varheartsuit}}
+
+
+\newcommand{\heartstab}{%
+\begin{tikzpicture}%
+\draw [line width=0.0mm, white] (3.5ex,0.4ex) -- (3.5ex,0.4ex);
+\Large{$\Hs$};
+\draw [line width=0.30mm, black] (-0.7ex,0.7ex) -- (1.2ex,1.2ex);%
+\draw [line width=0.50mm, black] (0.8ex,0.65ex) -- (0.55ex,1.45ex);%
+\end{tikzpicture}%
+}
+
+
+\newcommand{\squigarr}{
+{\Large \color{blue}$\rightsquigarrow$}
+}
+
+\usepackage[colorlinks=true,urlcolor=purple]{hyperref}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{0.5em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+		
+        
+\newcommand{\NameEmailPhoneSiteGithub}[5]{
+        \Huge \usefont{OT1}{phv}{m}{n} \textbf{#1} 
+        \large \usefont{OT1}{phv}{m}{n} \hfill #2\hspace{25pt}#3
+        
+        \textit{ Curriculum Vitae}\hfill \textit{website } #4 \hspace{25pt}\textit{github } #5 
+        \par \normalsize \normalfont
+}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+
+
+
+\begin{document}
+
+
+\iffalse
+\begin{figure}
+
+    \includegraphics[width=.15\textwidth,left]{picture-of-me1.jpg}
+
+\end{figure}
+\fi
+
+
+\NameEmailPhoneSiteGithub{Leonardo Bejar}{+49 (176) 59870449}{Leonardo.Bejar@gisma-student.com}{\href{https://github.com/dcxSt}{https://github.com/LeonardoBejar145}}
+
+
+\sepspace
+
+
+
+\NewPart{Education}{}
+
+
+\begin{itemize}
+    \textbf{High-school:} I graduate from highschool with a 9.1 of avarage grades.  
+    \textbf{University} I´m coursing Software Engineering in GISMA university of applyied sciences. 
+\end{itemize}
+
+\sepspace
+
+
+
+
+\NewPart{Work Experiance}{}
+
+    Work as waiter on a restaurant. 
+    
+    Work as photographer in a church.
+
+
+
+\sepspace
+
+
+\NewPart{Skills}{}
+
+\SkillsEntry{English}{I have been learning and practicing my english since I            was a Kid so right now I have a C1 level in the lenguage.}
+\SkillsEntry{German}{I recently started to Learn German so I have a A2 or even less but im still learning.}
+\SkillsEntry{Software}{I´m studing for this topic so I´m still learning how to do stuff.}
+\SkillsEntry{Python}{I have a good level of skill in python.}
+
+
+
+\NewPart{Achievements and Interests}{}
+
+
+    My biggests achivements was during high school. I gain three times golden medall in Kumon and I even participate on the mathematic´s Olympics in my city.
+    Another great accomplishment was in sports. I was the number 1 athlete of my city and I won bronze in my country national championship.
+    Now I´m interest in finish my carrer with realy good grades.
+
+
+
+\end{document}
